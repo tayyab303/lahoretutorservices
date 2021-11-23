@@ -23,7 +23,7 @@ Variable
 require('recaptcha-master/src/autoload.php');
 
 /* ReCaptch Secret */
-$recaptchaSecret = '<!-- Put Your reCaptcha Secret Key -->';
+$recaptchaSecret = '6LcLUVMdAAAAAHeja8eHypNaWyP13t96RKN7V0Ew';
 
 $dzEmailTo 		= "info@example.com";   /* Receiver Email Address */
 $dzEmailFrom    = "Smart Class Contact";
