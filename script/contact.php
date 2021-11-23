@@ -1,6 +1,5 @@
 <?php
 /*
-Template Name: Smart Class: coaching classes
 
 Variable
 	$recaptchaSecret : Recaptcha Secret Key
@@ -25,8 +24,8 @@ require('recaptcha-master/src/autoload.php');
 /* ReCaptch Secret */
 $recaptchaSecret = '6LcLUVMdAAAAAHeja8eHypNaWyP13t96RKN7V0Ew';
 
-$dzEmailTo 		= "info@example.com";   /* Receiver Email Address */
-$dzEmailFrom    = "Smart Class Contact";
+$dzEmailTo 		= "advabidhussain57@gmail.com";   /* Receiver Email Address */
+$dzEmailFrom    = "Lahore Tutor Services";
 
 function pr($value)
 {
@@ -73,7 +72,7 @@ try {
 			$dzRes['status'] = 0;
 			$dzRes['msg'] = 'Wrong Email Format.';
 		}
-		$dzMailSubject = 'Smart Class|Contact Form: A Person want to contact';
+		$dzMailSubject = 'Lahore Tutor Services | Quicky Enquiry Form: A Person want to contact';
 		$dzMailMessage	= 	"
 							A person want to contact you: <br><br>
 							Name: $dzName<br/>
