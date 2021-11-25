@@ -24,7 +24,7 @@ require('recaptcha-master/src/autoload.php');
 /* ReCaptch Secret */
 $recaptchaSecret = '6LcLUVMdAAAAAHeja8eHypNaWyP13t96RKN7V0Ew';
 
-$dzEmailTo 		= "advabidhussain57@gmail.com";   /* Receiver Email Address */
+$dzEmailTo 		= "bc170201374@vu.edu.pk";   /* Receiver Email Address */
 $dzEmailFrom    = "Lahore Tutor Services";
 
 function pr($value)
