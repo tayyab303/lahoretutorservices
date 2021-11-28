@@ -93,7 +93,8 @@ try {
 			}
 		}
 		$dzMailMessage .= $dzOtherField; 
-							
+		
+		$dzEmailHeader  	= "Access-Control-Allow-Origin: *";
 		$dzEmailHeader  	= "MIME-Version: 1.0\r\n";
 		$dzEmailHeader 		.= "Content-type: text/html; charset=iso-8859-1\r\n";
 		$dzEmailHeader 		.= "From:$dzEmailFrom <$dzEmail>";

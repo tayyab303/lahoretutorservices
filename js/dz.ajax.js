@@ -35,7 +35,7 @@ File : dz.ajax.js
 		var dzFormData = $(this).serialize();
 		
 		$.ajax({
-			type: "POST",
+			method: "POST",
 			url: dzFormAction,
 			data: dzFormData,
 			dataType: 'json',
