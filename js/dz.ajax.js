@@ -31,7 +31,6 @@ File : dz.ajax.js
 		debugger;
 		e.preventDefault();	//STOP default action
 		$('.dzFormMsg').html('<div class="gen alert alert-success">Submitting..</div>');
-		debugger;
 		var dzFormAction = $(this).attr('action');
 		console.log(dzFormAction);
 		var dzFormData = $(this).serialize();
@@ -42,6 +41,7 @@ File : dz.ajax.js
 			data: dzFormData,
 			dataType: 'json',
 			success: function(dzRes){
+				debugger;
 				if(dzRes.status == 1){
 					msgDiv = '<div class="gen alert alert-success">'+dzRes.msg+'</div>';
 				}
@@ -52,6 +52,9 @@ File : dz.ajax.js
 				$('.dzFormMsg').html(msgDiv);
 				$('.dzForm')[0].reset();
                 grecaptcha.reset();
+			},
+			error: function() {
+			  alert("There was an error. Try again please!");
 			}
 		})
 	});
