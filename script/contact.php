@@ -96,7 +96,7 @@ try {
 		
 		// $dzEmailHeader  	= "Access-Control-Allow-Origin: *";
 		// $dzEmailHeader  	= "MIME-Version: 1.0\r\n";
-		$dzEmailHeader      = 'Access-Control-Allow-Origin: *'.'MIME-Version: 1.0\r\n'.'From: ' .$dzEmailFrom .'<'.$dzEmail.'>' . "\r\n".'Reply-To: ' . $dzEmail. "\r\n".'X-Mailer: PHP/' . phpversion();
+		$dzEmailHeader      = 'Access-Control-Allow-Origin: *'.'MIME-Version: 1.0\r\n'.'Content-type: text/html; charset=iso-8859-1\r\n'.'From: ' .$dzEmailFrom .'<'.$dzEmail.'>' . "\r\n".'Reply-To: ' . $dzEmail. "\r\n".'X-Mailer: PHP/' . phpversion();
 		// $dzEmailHeader 		.= "Content-type: text/html; charset=iso-8859-1\r\n";
 		// $dzEmailHeader 		.= "From:$dzEmailFrom <$dzEmail>";
 		// $dzEmailHeader 		.= "Reply-To: $dzEmail\r\n"."X-Mailer: PHP/".phpversion();
