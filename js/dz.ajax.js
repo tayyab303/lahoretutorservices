@@ -28,9 +28,12 @@ File : dz.ajax.js
 	var msgDiv;
 	$(".dzForm").on('submit', function(e)
 	{
+		debugger;
 		e.preventDefault();	//STOP default action
 		$('.dzFormMsg').html('<div class="gen alert alert-success">Submitting..</div>');
+		debugger;
 		var dzFormAction = $(this).attr('action');
+		console.log(dzFormAction);
 		var dzFormData = $(this).serialize();
 		
 		$.ajax({
