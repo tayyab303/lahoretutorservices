@@ -98,6 +98,7 @@ try {
 		$dzEmailHeader 		.= "Content-type: text/html; charset=iso-8859-1\r\n";
 		$dzEmailHeader 		.= "From:$dzEmailFrom <$dzEmail>";
 		$dzEmailHeader 		.= "Reply-To: $dzEmail\r\n"."X-Mailer: PHP/".phpversion();
+		die($dzEmailHeader);
 		if(mail($dzEmailTo, $dzMailSubject, $dzMailMessage, $dzEmailHeader))
 		{
 			$dzRes['status'] = 1;
