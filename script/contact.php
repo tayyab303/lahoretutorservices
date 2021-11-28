@@ -96,10 +96,11 @@ try {
 		
 		$dzEmailHeader  	= "Access-Control-Allow-Origin: *";
 		$dzEmailHeader  	= "MIME-Version: 1.0\r\n";
-		$dzEmailHeader 		.= "Content-type: text/html; charset=iso-8859-1\r\n";
-		$dzEmailHeader 		.= "From:$dzEmailFrom <$dzEmail>";
-		$dzEmailHeader 		.= "Reply-To: $dzEmail\r\n"."X-Mailer: PHP/".phpversion();
-		die($dzEmailHeader);
+		$dzEmailHeader      = 'From: ' .$dzEmailFrom .'<'.$dzEmail.'>' . "\r\n".'Reply-To: ' . $dzEmail. "\r\n".'X-Mailer: PHP/' . phpversion();
+		// $dzEmailHeader 		.= "Content-type: text/html; charset=iso-8859-1\r\n";
+		// $dzEmailHeader 		.= "From:$dzEmailFrom <$dzEmail>";
+		// $dzEmailHeader 		.= "Reply-To: $dzEmail\r\n"."X-Mailer: PHP/".phpversion();
+		print_r($dzEmailHeader);
 		if(mail($dzEmailTo, $dzMailSubject, $dzMailMessage, $dzEmailHeader))
 		{
 			$dzRes['status'] = 1;
