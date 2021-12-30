@@ -501,12 +501,51 @@
 <script src="js/dz.carousel.js"></script><!-- SORTCODE FUCTIONS -->
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyBjirg3UoMD5oUiFuZt3P9sErZD-2Rxc68&sensor=false"  ></script><!-- GOOGLE MAP -->
 <script src='https://www.google.com/recaptcha/api.js'></script> <!-- Google API For Recaptcha  -->
-<script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
 <script src="plugins/loading/anime.js"></script><!-- LOADING JS -->
 <script src="plugins/loading/anime-app.js"></script><!-- LOADING JS -->
 <script src="js/jquery.marquee.js"></script><!-- LOADING JS -->
 <script>
 	$(function(){
+		var msgDiv;
+	$(".dzForm").on('submit', function(e)
+	{
+		debugger;
+		e.preventDefault();	//STOP default action
+		$('.dzFormMsg').html('<div class="gen alert alert-success">Submitting..</div>');
+		var dzFormAction = $(this).attr('action');
+		var dzFormData = $(this).serialize();
+		
+		$.ajax({
+			type: "POST",
+			url: dzFormAction,
+			data: dzFormData,
+			dataType: 'json',
+			success: function(dzRes){
+				console.log(dzRes);
+				debugger;
+				if(dzRes.status == 1){
+					msgDiv = '<div class="gen alert alert-success">'+dzRes.msg+'</div>';
+				}
+				
+				if(dzRes.status == 0){
+					msgDiv = '<div class="err alert alert-danger">'+dzRes.msg+'</div>';
+				}
+				$('.dzFormMsg').html(msgDiv);
+				$('.dzForm')[0].reset();
+                grecaptcha.reset();
+			},
+			error: function() {
+			  alert("There was an error. Try again please!");
+			}
+		})
+	});
+	
+	
+	setInterval(function(){
+		$('.dzFormMsg .alert').hide(1000);
+	}, 10000);
+
+
 		$('.marquee').marquee({
 			speed: 100,
 			gap: 0,
