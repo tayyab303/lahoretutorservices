@@ -40,6 +40,7 @@ File : dz.ajax.js
 			data: dzFormData,
 			dataType: 'json',
 			success: function(dzRes){
+				console.log(dzRes);
 				debugger;
 				if(dzRes.status == 1){
 					msgDiv = '<div class="gen alert alert-success">'+dzRes.msg+'</div>';
